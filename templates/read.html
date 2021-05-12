@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <h1>Johnson's Restaurant Admin Pages</h1>
+    <h2>Read Food/Drink</h2>
+    <p>Menu Items displayed here</p>
+    <hr>
+    <table>
+        <tr>
+        <th>Food/Drink</th>
+        <th>Quantity</th>
+        </tr>
+        {% for word in wordinfo %}
+        <tr><td>{{word[0]}}</td><td>{{word[1]}}</td></tr>
+        {% endfor %}
+    </table>
+    <hr>
+    <a href="/">Home</a>
+</body>
+</html>

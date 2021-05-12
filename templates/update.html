@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+<h1>Johnson's Restaurant Admin Pages</h1>
+<h2>Update Food/Drink</h2>
+<h3>{{errormsg}}</h3>
+<form action="update" method="POST">
+    <p>Search Food<input type="text" name="word"/></p>
+    <p><input type="submit" name="btn_id" value="Search"/></p>
+</form>
+<form action="update" method="POST">
+    <p>Food/Drink<input type="text" name="hiddenword" readonly value="{{word}}"/></p>
+    <p>Quantity<input type="text" name="level" value="{{level}}"/></p>
+    <p>Update<input type="submit" name="btn_id" value="Update"/></p>
+</form>
+<a href="/">Home</a>
+</body>
+</html>
