@@ -1,11 +1,11 @@
 import sqlite3
-import Hangman_readone
+import Restaurant_readone
 
 # The update function updates an exiting item's data
 def update():
     item = ""
     quantity = ""
-    item, quantity = Hangman_readone.getWord()
+    item, quantity = Restaurant_readone.getWord()
     if item == "-1":
         print("Word not found")
     else:
@@ -19,6 +19,8 @@ def update():
 #The update row function updates an existing row with a new
 #ItemName and Price. The number of rows updated is returned
 def update_row(item, quantity):
+    print("quanity is " + quantity)
+    print("food is " + item)
     conn = None
     num_updated = 0
     try:
@@ -27,8 +29,10 @@ def update_row(item, quantity):
         cur.execute('''UPDATE food
         SET quantity = ? WHERE lower(item) == ?''',
                     ( quantity, item.lower()))
+        # cur.execute('''SELECT * FROM food WHERE lower(item) == ?''', (name.lower(),))
         conn.commit()
         num_updated = cur.rowcount
+        # print("num_updated = " +num_updated)
     except sqlite3.Error as err:
         print('Database Error', err)
     finally:

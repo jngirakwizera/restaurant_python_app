@@ -6,7 +6,7 @@ h1{
 }
 
 h2{
-    color: blue;
+    color: red;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding-top:8%;
     text-align:center;
@@ -15,6 +15,23 @@ h2{
 h3{
     color: rgb(255, 51, 0);
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+
+  cursor: pointer;
+}
+
+input[type=text] {
+  border: 2px solid red;
+  border-radius: 4px;
+   margin-left:8px;
 }
 
 
@@ -38,8 +55,23 @@ h3{
   color: black;
 }
 
+#logoContainer{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-content:center;
+align-items:center;
+width:100%;
+}
+
+#logo{
+
+width: 200px;
+height: 200px;
+}
+
 .topnav a.active {
-  background-color: #04AA6D;
+  background-color: red;
   color: white;
 }
 

@@ -7,26 +7,36 @@
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="/add" class="active">Create Food</a><
+    <a href="/" class="active">Home</a>
+  <a href="/add" >Create Food</a>
   <a href="/read/all">Read Food</a>
   <a href="/update">Update Food</a>
   <a href="/read_delete">Delete Food</a>
-    <a href="/hangman">Order Food!</a>
+    <a href="/order">Order Food!</a>
   <a href="javascript:void(0);" class="icon" onclick="handleNav()">
     <i class="fa fa-bars"></i>
   </a>
 </div>
 
+<div id="logoContainer">
+    <img  src="static/media/logo.png" id="logo" alt="logo"/>
+<!--    <h1>Johnson's Restaurant Admin Pages</h1>-->
+    <h3>Orders</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+        <th>Food</th>
+        <th>Quantity</th>
 
-<h1>Johnson's Restaurant Admin Pages</h1>
-<ul>
-    <li><a href="/add">Create Food</a></li>
-    <li><a href="/read/all">Read Food</a></li>
-    <li><a href="/update">Update Food</a></li>
-    <li><a href="/read_delete">Delete Food</a></li>
+        </tr>
+        {% for word in wordinfo %}
+        <tr><td>{{word[2]}}</td><td>{{word[0]}}</td><td>{{word[1]}}</td></tr>
+        {% endfor %}
+    </table>
+</div>
 
-     <li><a href="/hangman">Order Food!</a></li>
-</ul>
+
+
 
 <script src="static/scripts/nav.js"></script>
 </body>

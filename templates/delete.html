@@ -2,15 +2,26 @@
 <html>
 <head>
     <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <h1>Johnson's Restaurant Admin Pages</h1>
-    <h2>Delete Food/Drink</h2>
-     <form>
-        <p>Enter Food/Drink to Delete<input type="text" name="word"/></p>
-        <p>Delete<input type="submit" value="submit"/></p>
-    </form>
-    <hr>
+
+<div class="topnav" id="myTopnav">
+    <a href="/" class="active">Home</a>
+  <a href="/add" >Create Food</a>
+  <a href="/read/all">Read Food</a>
+  <a href="/update">Update Food</a>
+  <a href="/read_delete">Delete Food</a>
+    <a href="/order">Order Food!</a>
+  <a href="javascript:void(0);" class="icon" onclick="handleNav()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="logoContainer">
+    <img  src="static/media/logo.png" id="logo" alt="logo"/>
+</div>
+
+
     <table>
         <tr>
         <th>Food</th>
@@ -21,6 +32,7 @@
         {% endfor %}
     </table>
     <hr>
-    <a href="/">Home</a>
+<!--    <a href="/">Home</a>-->
+<script src="static/scripts/nav.js"></script>
 </body>
 </html>

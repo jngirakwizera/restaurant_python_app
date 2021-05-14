@@ -2,20 +2,37 @@
 <html>
 <head>
     <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<h1>Johnson's Restaurant Admin Pages</h1>
+
+<div class="topnav" id="myTopnav">
+    <a href="/" class="active">Home</a>
+  <a href="/add" >Create Food</a>
+  <a href="/read/all">Read Food</a>
+  <a href="/update">Update Food</a>
+  <a href="/read_delete">Delete Food</a>
+    <a href="/order">Order Food!</a>
+  <a href="javascript:void(0);" class="icon" onclick="handleNav()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="logoContainer">
+    <img  src="static/media/logo.png" id="logo" alt="logo"/>
+</div>
+
 <h2>Update Food/Drink</h2>
 <h3>{{errormsg}}</h3>
 <form action="update" method="POST">
-    <p>Search Food<input type="text" name="word"/></p>
+    <p>Search Food<input type="text" name="food"/></p>
     <p><input type="submit" name="btn_id" value="Search"/></p>
 </form>
 <form action="update" method="POST">
-    <p>Food/Drink<input type="text" name="hiddenword" readonly value="{{word}}"/></p>
-    <p>Quantity<input type="text" name="level" value="{{level}}"/></p>
+    <p>Food/Drink<input type="text" name="food" readonly value="{{food}}"/></p>
+    <p>Quantity<input type="text" name="quantity" value="{{quantity}}"/></p>
     <p>Update<input type="submit" name="btn_id" value="Update"/></p>
 </form>
-<a href="/">Home</a>
+<!--<a href="/">Home</a>-->
+<script src="static/scripts/nav.js"></script>
 </body>
 </html>

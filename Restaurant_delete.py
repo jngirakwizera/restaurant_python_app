@@ -1,11 +1,11 @@
 import sqlite3
-import Hangman_readone
+import Restaurant_readone
 
 #The delete functino deletes an item
 def delete():
     item = ""
     quantity = ""
-    item, quantity = Hangman_readone.getWord()
+    item, quantity = Restaurant_readone.getWord()
     if item == "-1":
         print("Word not found")
     else:

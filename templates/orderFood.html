@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+    <a href="/" class="active">Home</a>
+  <a href="/add" >Create Food</a>
+  <a href="/read/all">Read Food</a>
+  <a href="/update">Update Food</a>
+  <a href="/read_delete">Delete Food</a>
+    <a href="/order">Order Food!</a>
+  <a href="javascript:void(0);" class="icon" onclick="handleNav()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<div id="logoContainer">
+    <img  src="static/media/logo.png" id="logo" alt="logo"/>
+</div>
+<h3>{{errormsg}}</h3>
+<form action="/order" method="POST">
+    <p>Name<input type="text" name="name" /></p>
+    <p>Food<input type="text" name="food"  /></p>
+    <p>Quantity<input type="text" name="quantity"  /></p>
+    <p><input type="submit" name="btn_id" value="Order"/></p>
+</form>
+
+<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+<input type="hidden" name="cmd" value="_cart">
+<input type="hidden" name="business" value="jngirakwizera@amarillocollege.com">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="item_name" value="Johnson food">
+<input type="hidden" name="amount" value="10.00">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="button_subtype" value="products">
+<input type="hidden" name="no_note" value="0">
+<input type="hidden" name="tax_rate" value="8.250">
+<input type="hidden" name="shipping" value="0.00">
+<input type="hidden" name="add" value="1">
+<input type="hidden" name="bn" value="PP-ShopCartBF:btn_cart_LG.gif:NonHostedGuest">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+ <table>
+        <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        </tr>
+        {% for word in wordinfo %}
+        <tr><td>{{word[0]}}</td><td>{{word[1]}}</td></tr>
+        {% endfor %}
+ </table>
+
+
+<script src="static/scripts/nav.js"></script>
+</body>
+</html>
